@@ -11,6 +11,7 @@ gulp.task('markdown', function(){
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('build/'))
 });
+
 //  Minify and compress .css
 gulp.task('styles', function() {
   gulp.src('build/estilos/*.css')
