@@ -1,0 +1,28 @@
+{
+  "name": "materiales-vallejo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/materialesvallejo/website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/materialesvallejo/website/issues"
+  },
+  "homepage": "https://github.com/materialesvallejo/website#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-gzip": "^1.4.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-sitemap": "^4.2.0",
+    "gulp-uglify": "^2.0.0"
+  }
+}
