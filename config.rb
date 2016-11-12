@@ -42,3 +42,9 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
+
+# DatoCMS Extension
+activate :dato,
+  domain: 'morning-mountain-8323.admin.datocms.com',
+  token: 'caa4b8f93f5afe9453a37f15022b74ae227ce8e9f62814eb99',
+  base_url: 'http://www.materialesvallejo.com'
