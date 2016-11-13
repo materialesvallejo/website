@@ -1,0 +1,67 @@
+/*
+  GENERAL
+*/
+html { -webkit-font-smoothing: antialiased; }
+/*
+  OVERFLOW
+*/
+.overflow-scrolling { -webkit-overflow-scrolling: touch; }
+.scrollbar-dn::-webkit-scrollbar { display: none; }
+/*
+  SPACING
+*/
+.mr2 { margin-right: 2rem; }
+.mb05 { margin-bottom: 0.5rem; }
+.mb1 { margin-bottom: 1rem; }
+.mb2 { margin-bottom: 2rem; }
+.mb3 { margin-bottom: 3rem; }
+.pv05 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.pv1 { padding-top: 1rem; padding-bottom: 1rem; }
+.pv3 { padding-top: 3rem; padding-bottom: 3rem; }
+.pv6 { padding-top: 6rem; padding-bottom: 6rem; }
+.pv8 { padding-top: 8rem; padding-bottom: 8rem; }
+.ph15 { padding-right: 1.5rem; padding-left: 1.5rem; }
+.ph3 { padding-right: 3rem; padding-left: 3rem; }
+.pt15 { padding-top: 1.5rem; }
+.pb2 { padding-bottom: 2rem; }
+.pb3 { padding-bottom: 3rem; }
+/*
+  FONT FAMILY
+*/
+.lato { font-family: 'Lato'; }
+/*
+  FONT SIZE
+*/
+.f1 { font-size: 1rem; }
+.f15 { font-size: 1.5rem; }
+/*
+  LINE HEIGHT
+*/
+.lh125 { line-height: 1.25; }
+.lh15 { line-height: 1.5; }
+/*
+  LETTER SPACING
+*/
+.tracking075 { letter-spacing: 0.075rem; }
+/*
+  COLOR
+*/
+.dark-gray { color: #333333; }
+.gray { color: #828282; }
+.silver { color: #bdbdbd; }
+.blue { color: #0080ff; }
+.bg-blue { background-color: #0080ff; }
+.b--light-gray { border-color: #e0e0e0; }
+/*
+  WIDTHS
+*/
+.w8 { width: 8rem; }
+.w15 { width: 15rem; }
+/*
+  MAX WIDTHS
+*/
+.mw645 { max-width: 64.5rem; }
+/*
+  BORDER RADIUS
+*/
+.br0125 { border-radius: 0.125rem; }
