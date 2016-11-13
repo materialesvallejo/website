@@ -1,8 +1,9 @@
 var gulp = require('gulp'),
-    cssmin = require('gulp-cssmin'),
     htmlmin = require('gulp-htmlmin'),
-    gzip = require('gulp-gzip'),
+    cssmin = require('gulp-cssmin'),
     uglify = require('gulp-uglify'),
+    gzip = require('gulp-gzip'),
+    svgmin = require('gulp-svgmin'),
     sitemap = require('gulp-sitemap');
 
 //  Minify and compress .html
@@ -28,6 +29,13 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('build/javascript'))
 });
 
+//  Minify SVG
+gulp.task('svg', function () {
+    return gulp.src('build/images/logo.svg')
+        .pipe(svgmin())
+        .pipe(gulp.dest('build/images'));
+});
+
 //  Generate sitemap
 gulp.task('sitemap', function() {
   gulp.src('build/**/*.html', {
@@ -40,4 +48,4 @@ gulp.task('sitemap', function() {
 });
 
 // Run previously declared tasks on `gulp`
-gulp.task('build', ['markdown', 'styles', 'scripts', 'sitemap']);
+gulp.task('build', ['markdown', 'styles', 'scripts', 'svg', 'sitemap']);
