@@ -51,11 +51,40 @@ title: Materiales para Construcción — Materiales Vallejo
           <% if category.name === product.category.name %>
             <% pc = pc + 1 %>
             <article class="dib w15 <% if pc != pl %>mr2<% end %> bg-white ba b--light-gray br0125">
-              <header class="relative ph15 pt15 pb2">
+              <header class="relative mh15 mt15 pb2">
+                <%= image_tag "arrow.svg", :class => "absolute top-1 right-0" %>
                 <h2 class="ma0 mb05 lato f1 fw4 silver"><%= product.brand %></h2>
                 <h1 class="ma0 lato f1 fw4 dark-gray"><%= product.name %></h1>
               </header>
-              <img class="pb2" src="<%= product.image.file.file.to_url %>">
+              <div class="relative">
+                <div class="">
+                  <img class="pb2" src="<%= product.image.file.file.to_url %>">
+                </div>
+                <div class="dn ws-normal">
+                  <ul class="ma0 pa0 mh15 mb15 list">
+                    <%# Variables %>
+                    <% sl = product.sections.length - 1 %>
+                    <%# End %>
+                    <% product.sections.sort_by(&:position).each_with_index do |detail, d| %>
+                      <li>
+                        <p class="ma0 mb05 lato gray"><%= detail.title %></p>
+                      </li>
+                      <li class="<% if d != sl %>mb1<% end %>">
+                        <ul class="ma0 pa0 list">
+                          <%# Variables %>
+                          <% ll = detail.list.length - 1 %>
+                          <%# End %>
+                          <% detail.list.sort_by(&:position).each_with_index do |item, i|  %>
+                            <li class="dib <% if i != ll %>mr1<% end %> <% if i %><% end %>">
+                              <p class="ma0 lato dark-gray"><%= item.item %></p>
+                            </li>
+                          <% end %>
+                        </ul>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
             </article>
           <% end %>
         <% end %>
@@ -64,7 +93,8 @@ title: Materiales para Construcción — Materiales Vallejo
   </section>
   <%# Services %>
   <%# Variables %>
-
+  <% sl = dato.services.length - 1 %>
+  <% icons = ["barrow.svg", "checkbox.svg", "cards.svg", "bubbles.svg"] %>
   <%# End %>
   <section class="pv3 ph15 bb b--light-gray">
     <header class="lato tc mb3">
@@ -73,12 +103,23 @@ title: Materiales para Construcción — Materiales Vallejo
     </header>
     <ul class="ma0 pa0 list">
       <% dato.services.sort_by(&:position).each_with_index do |service, s| %>
-        <li>
-          <img class="w1 ma0" src="<%= service.icon.file.file.to_url %>" alt="<%= service.icon.alt %>">
-          <h3 class="ma0 lato f1 fw4 dark-gray"><%= service.name %></h3>
-          <p class="ma0"><%= service.description %></p>
+        <li class="<% if s != sl %>mb2<% end %>">
+          <%= image_tag "#{ icons[s] }", :class => "ma0 pr05", :alt => "#{ service.icon.alt }" %>
+          <h3 class="dib ma0 mb05 lato f1 fw4 dark-gray"><%= service.name %></h3>
+          <p class="ma0 lato f1 fw4 lh15 gray"><%= service.description %></p>
         </li>
       <% end %>
     </ul>
+  </section>
+  <%# Contact %>
+  <%# Variables %>
+
+  <%# End %>
+  <section class="pv3 ph15">
+    <header class="lato tc mb3">
+      <h1 class="ma0 mb1 f15 fw4 lh01 dark-gray"><%= dato.index.contact.title %></h1>
+      <p class="ma0 f1 fw4 lh15 gray"><%= dato.index.contact.subtitle_open %></p>
+    </header>
+    <%= partial "partials/contact" %>
   </section>
 </main>
