@@ -1,0 +1,24 @@
+{
+  "sections": [
+    {
+      "title": "Nosotros",
+      "url": "/about",
+      "target": false
+    },
+    {
+      "title": "Aviso de Privacidad",
+      "url": "/aviso",
+      "target": false
+    },
+    {
+      "title": "English Site",
+      "url": "/",
+      "target": false
+    },
+    {
+      "title": "Código Fuente",
+      "url": "https://github.com/materialesvallejo/website",
+      "target": true
+    }
+  ]
+}
