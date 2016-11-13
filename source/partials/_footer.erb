@@ -1,0 +1,9 @@
+<footer class="">
+  <ul class="ma0 pa0 list">
+    <% data.footer.sections.each_with_index do |section, s| %>
+      <li class="db dib-ns tc bt b--light-gray">
+        <a class="db pv15 lato gray link bg-almost-white" href="<%= section.url %>" target="<% if section.target %>_blank<% end %>"><%= section.title %></a>
+      </li>
+    <% end %>
+  </ul>
+</footer>
