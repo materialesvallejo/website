@@ -62,4 +62,23 @@ title: Materiales para Construcción — Materiales Vallejo
       <% end %>
     </div>
   </section>
+  <%# Services %>
+  <%# Variables %>
+
+  <%# End %>
+  <section class="pv3 ph15 bb b--light-gray">
+    <header class="lato tc mb3">
+      <h1 class="ma0 mb1 f15 fw4 lh01 dark-gray"><%= dato.index.services.title %></h1>
+      <p class="ma0 f1 fw4 lh15 gray"><%= dato.index.services.subtitle %></p>
+    </header>
+    <ul class="ma0 pa0 list">
+      <% dato.services.sort_by(&:position).each_with_index do |service, s| %>
+        <li>
+          <img class="w1 ma0" src="<%= service.icon.file.file.to_url %>" alt="<%= service.icon.alt %>">
+          <h3 class="ma0 lato f1 fw4 dark-gray"><%= service.name %></h3>
+          <p class="ma0"><%= service.description %></p>
+        </li>
+      <% end %>
+    </ul>
+  </section>
 </main>
