@@ -13,6 +13,9 @@ configure :development do
   activate :livereload
 end
 
+# Localize site
+activate :i18n
+
 ###
 # Page options, layouts, aliases and proxies
 ###
