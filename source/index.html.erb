@@ -2,5 +2,64 @@
 layout: main
 title: Materiales para Construcción — Materiales Vallejo
 ---
-<%# Test Integration %>
-<h1><%= dato.contact.number %></h1>
+<%# Content %>
+<main>
+  <%# Hero %>
+  <%# Variables %>
+  <% hero = dato.index.hero %>
+  <%# End %>
+  <article class="pv8 ph15 cover bg-center" style="background-image: url(<%= hero.background.file.file.to_url %>)">
+    <header class="lato tc white">
+      <h1 class="ma0 mb1 f15 fw4 lh01"><%= hero.title %></h1>
+      <p class="ma0 mb2 f1 fw4 lh15"><%= hero.subtitle %></p>
+    </header>
+    <div class="tc lato white">
+      <% hero.button.each_with_index do |button, b| %>
+        <% if button.is_primary %>
+          <a class="db center <% if b == 0 %>mb1<% end %> w8 pv05 tc bg-blue br0125">
+            <%= button.title %>
+          </a>
+        <% else %>
+          <a class="db center <% if b == 0 %>mb1<% end %> w8 pv05 tc ba b--white br0125">
+            <%= button.title %>
+          </a>
+        <% end %>
+      <% end %>
+    </div>
+  </article>
+  <%# Products %>
+  <%# Variables %>
+  <% cl = dato.categories.length - 1 %>
+  <% pl = dato.products.length %>
+  <% pc = 0 %>
+  <%# End %>
+  <section class="pv3 bb b--light-gray">
+    <header class="lato tc ph15 mb3">
+      <h1 class="ma0 mb1 f15 fw4 lh01 dark-gray"><%= dato.index.products.title %></h1>
+      <p class="ma0 f1 fw4 lh15 gray"><%= dato.index.products.subtitle %></p>
+    </header>
+    <nav>
+      <ul class="ma0 ph15 pb2 overflow-x-auto overflow-scrolling scrollbar-dn nowrap list">
+        <% dato.categories.sort_by(&:position).each_with_index do |category, c| %>
+          <li class="dib"><a class="lato <% if c === 0 %>blue<% else %>gray<% end %> <% if c != cl %>mr2<% end %>"><%= category.name %></a></li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="ph15 overflow-x-auto overflow-scrolling scrollbar-dn nowrap">
+      <% dato.categories.sort_by(&:position).each do |category| %>
+        <% dato.products.sort_by(&:position).each do |product| %>
+          <% if category.name === product.category.name %>
+            <% pc = pc + 1 %>
+            <article class="dib w15 <% if pc != pl %>mr2<% end %> bg-white ba b--light-gray br0125">
+              <header class="relative ph15 pt15 pb2">
+                <h2 class="ma0 mb05 lato f1 fw4 silver"><%= product.brand %></h2>
+                <h1 class="ma0 lato f1 fw4 dark-gray"><%= product.name %></h1>
+              </header>
+              <img class="pb2" src="<%= product.image.file.file.to_url %>">
+            </article>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </section>
+</main>
