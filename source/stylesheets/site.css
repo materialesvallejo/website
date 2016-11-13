@@ -55,6 +55,7 @@ html { -webkit-font-smoothing: antialiased; }
 /*
   WIDTHS
 */
+.w1 { width: 2rem; }
 .w8 { width: 8rem; }
 .w15 { width: 15rem; }
 /*
