@@ -1,0 +1,70 @@
+<a class="db cf mb1 pv05">
+  <table class="w-100">
+    <tbody>
+      <tr>
+        <td class="tc w-20">
+          <%= image_tag "phone.svg", :class => "v-mid" %>
+        </td>
+        <td class="w-80">
+          <p class="ma0 lato fw4 f1 dark-gray"><%= dato.contact.number %></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</a>
+<a class="db cf mb1 pv05">
+  <table class="w-100">
+    <tbody>
+      <tr>
+        <td class="tc w-20">
+          <%= image_tag "envelope.svg", :class => "v-mid" %>
+        </td>
+        <td class="w-80">
+          <p class="ma0 lato fw4 f1 dark-gray"><%= dato.contact.email %></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</a>
+<a class="db cf mw20 center pv1">
+  <table class="w-100">
+    <tbody>
+      <tr>
+        <td class="tc v-top w-20">
+          <%= image_tag "pin.svg" %>
+        </td>
+        <td class="w-80">
+          <ul class="list ma0 pa0">
+            <li><p class="ma0 mb025 lato mb025 fw4 f1 dark-gray"><%= dato.contact.address.street %></p></li>
+            <li><p class="ma0 mb025 lato mb025 fw4 f1 dark-gray"><%= dato.contact.address.division %></p></li>
+            <li><p class="ma0 lato fw4 f1 dark-gray"><%= dato.contact.address.city %>, <%= dato.contact.address.state %> <%= dato.contact.address.zip_code %></p></li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</a>
+<a class="db cf mw20 center mb1 pv1">
+  <table class="w-100">
+    <tbody>
+      <tr>
+        <td class="tc v-top w-20">
+          <%= image_tag "clock.svg" %>
+        </td>
+        <td class="w-80">
+          <%# Weekdays %>
+          <ul class="list ma0 pa0">
+            <li><p class="ma0 mb05 lato fw4 f1 gray">Entre semana</p></li>
+            <li><p class="ma0 lato mb025 fw4 f1 dark-gray">8:00am — 1:00pm</p></li>
+            <li><p class="ma0 lato mb1 fw4 f1 dark-gray">2:30pm — 6:00pm</p></li>
+          </ul>
+          <%# Saturdays %>
+          <ul class="list ma0 pa0">
+            <li><p class="ma0 mb05 lato fw4 f1 gray">Sábados</p></li>
+            <li><p class="ma0 lato fw4 f1 dark-gray">8:00am — 2:00pm</p></li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</a>
