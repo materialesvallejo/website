@@ -50,17 +50,17 @@ title: Materiales para Construcción — Materiales Vallejo
         <% dato.products.sort_by(&:position).each do |product| %>
           <% if category.name === product.category.name %>
             <% pc = pc + 1 %>
-            <article class="dib w15 <% if pc != pl %>mr2<% end %> bg-white ba b--light-gray br0125">
+            <article class="js-card dib w15 h20 <% if pc != pl %>mr2<% end %> bg-white ba b--light-gray br0125">
               <header class="relative mh15 mt15 pb2">
-                <%= image_tag "arrow.svg", :class => "absolute top-1 right-0" %>
+                <%= image_tag "arrow.svg", :class => "js-rotate is-down absolute top-1 right-0" %>
                 <h2 class="ma0 mb05 lato f1 fw4 silver"><%= product.brand %></h2>
-                <h1 class="ma0 lato f1 fw4 dark-gray"><%= product.name %></h1>
+                <h1 class="js-test ma0 lato f1 fw4 dark-gray"><%= product.name %></h1>
               </header>
               <div class="relative">
-                <div class="">
+                <div class="js-fade is-visible absolute top-0 o-1">
                   <img class="pb2" src="<%= product.image.file.file.to_url %>">
                 </div>
-                <div class="dn ws-normal">
+                <div class="js-fade is-hidden absolute top-0 ws-normal">
                   <ul class="ma0 pa0 mh15 mb15 list">
                     <%# Variables %>
                     <% sl = product.sections.length - 1 %>
