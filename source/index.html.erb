@@ -8,25 +8,23 @@ title: Materiales para Construcción — Materiales Vallejo
   <%# Variables %>
   <% hero = dato.index.hero %>
   <%# End %>
-  <article class="pv8 ph15 cover bg-center" style="background-image: url(<%= hero.background.file.file.to_url %>)">
+  <section class="pv8 ph15 cover bg-center" style="background-image: url(<%= hero.background.file.file.to_url %>)">
     <header class="lato tc white">
       <h1 class="ma0 mb1 f15 fw4 lh01"><%= hero.title %></h1>
       <p class="ma0 mb2 f1 fw4 lh15"><%= hero.subtitle %></p>
     </header>
-    <div class="tc lato white">
+    <div class="tc lato white fw7">
       <% hero.button.each_with_index do |button, b| %>
         <% if button.is_primary %>
           <a class="db center <% if b == 0 %>mb1<% end %> w8 pv05 tc bg-blue br0125">
             <%= button.title %>
           </a>
         <% else %>
-          <a class="db center <% if b == 0 %>mb1<% end %> w8 pv05 tc ba b--white br0125">
-            <%= button.title %>
-          </a>
+          <a class="db center <% if b == 0 %>mb1<% end %> w8 pv05 tc ba b--white br0125"><%= button.title %></a>
         <% end %>
       <% end %>
     </div>
-  </article>
+  </section>
   <%# Products %>
   <%# Variables %>
   <% cl = dato.categories.length - 1 %>
@@ -112,9 +110,6 @@ title: Materiales para Construcción — Materiales Vallejo
     </ul>
   </section>
   <%# Contact %>
-  <%# Variables %>
-
-  <%# End %>
   <section class="pv3 ph15">
     <header class="lato tc mb3">
       <h1 class="ma0 mb1 f15 fw4 lh01 dark-gray"><%= dato.index.contact.title %></h1>
@@ -122,4 +117,6 @@ title: Materiales para Construcción — Materiales Vallejo
     </header>
     <%= partial "partials/contact" %>
   </section>
+  <%# Jobs Banner %>
+  <%= partial "partials/jobs" %>
 </main>
