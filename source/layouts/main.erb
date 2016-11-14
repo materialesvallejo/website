@@ -8,11 +8,11 @@
     <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag :tachyons %>
     <%= stylesheet_link_tag :site %>
-    <%= javascript_include_tag :all %>
   </head>
   <body>
     <%= partial "partials/nav" %>
     <%= yield %>
     <%= partial "partials/footer" %>
+    <%= javascript_include_tag :all %>
   </body>
 </html>
